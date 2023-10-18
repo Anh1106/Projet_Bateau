@@ -8,11 +8,15 @@ export default function Button(props: any) {
       onPress={() => {
         if (!props.disabled) {
           props.navigation.navigate(props.screen);
+        } else {
+          props.selectHandler();
         }
       }}
     >
       <Image style={styles.image} source={props.image}></Image>
-      <Text style={styles.text}>{props.text}</Text>
+      <Text style={styles.text}>{props.text} </Text>
+      {props.price && <Text>{props.price}€</Text>}
+      {!props.price && ""}
     </TouchableOpacity>
   );
 }

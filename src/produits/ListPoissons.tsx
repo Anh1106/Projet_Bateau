@@ -1,17 +1,22 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, ImageBackground } from "react-native";
 import styles from "../../services/styles";
 import Button from "../../components/Button";
 
 const poissons = [
-  { title: "Filet Bar de ligne " },
-  { title: "Bar de ligne portion " },
-  { title: "Aile de raie " },
-  { title: "Lieu jaune de ligne " },
-  { title: "Filet Julienne " },
-  { title: "Bar de ligne " },
+  { title: "Filet Bar de ligne ", price: 7 },
+  { title: "Bar de ligne portion ", price: 10 },
+  { title: "Aile de raie ", price: 10 },
+  { title: "Lieu jaune de ligne ", price: 12 },
+  { title: "Filet Julienne ", price: 19 },
+  { title: "Bar de ligne ", price: 30 },
 ];
+
+const [isSelected, setIsSelected] = useState(false);
+
+function selectHandler() {
+    setIsSelected(true);
+}
 
 const logo = require("../../assets/images/logo/poulpe.png");
 const disabled = true;
@@ -26,10 +31,12 @@ const ListPoissons = () => {
         {poissons.map((poisson, index) => (
           <Button
             key={index}
-            disabled = {disabled}
+            disabled={disabled}
             text={poisson.title}
             image={logo}
-            style={styles.button} 
+            style={styles.button}
+            price={poisson.price}
+            selectHandler={selectHandler}
           />
         ))}
       </ImageBackground>
