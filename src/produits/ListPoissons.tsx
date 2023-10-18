@@ -12,12 +12,6 @@ const poissons = [
   { title: "Bar de ligne ", price: 30 },
 ];
 
-const [isSelected, setIsSelected] = useState(false);
-
-function selectHandler() {
-    setIsSelected(true);
-}
-
 const logo = require("../../assets/images/logo/poulpe.png");
 const disabled = true;
 
@@ -36,7 +30,6 @@ const ListPoissons = () => {
             image={logo}
             style={styles.button}
             price={poisson.price}
-            selectHandler={selectHandler}
           />
         ))}
       </ImageBackground>

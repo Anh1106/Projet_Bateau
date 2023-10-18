@@ -1,7 +1,12 @@
 import { Text, TouchableOpacity, StyleSheet, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Button(props: any) {
+  const [isSelected, setIsSelected] = useState(false);
+  const toggleSelection = () => {
+    setIsSelected(!isSelected);
+  };
+
   return (
     <TouchableOpacity
       style={styles.button}
@@ -9,14 +14,14 @@ export default function Button(props: any) {
         if (!props.disabled) {
           props.navigation.navigate(props.screen);
         } else {
-          props.selectHandler();
+          toggleSelection();
         }
       }}
     >
       <Image style={styles.image} source={props.image}></Image>
       <Text style={styles.text}>{props.text} </Text>
+      {isSelected && <Text>OK</Text>}
       {props.price && <Text>{props.price}€</Text>}
-      {!props.price && ""}
     </TouchableOpacity>
   );
 }
