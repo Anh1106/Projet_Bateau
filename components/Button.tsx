@@ -4,7 +4,9 @@ import React, { useState } from "react";
 export default function Button(props: any) {
   const [isSelected, setIsSelected] = useState(false);
   const toggleSelection = () => {
-    setIsSelected(true);
+      props.item.purchase = !props.item.purchase;
+      setIsSelected(!isSelected);
+      console.log(props.item)
   };
 
   return (

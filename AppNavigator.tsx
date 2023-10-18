@@ -11,6 +11,9 @@ import Aquilon from './src/bateaux/Aquilon';
 import Contact from './src/Contact';
 import Products from './src/Products';
 import ListPoissons from './src/produits/ListPoissons';
+import ListCoquillages from './src/produits/ListCoquillages';
+import ListCrustaces from './src/produits/ListCrustaces';
+import ListPromotions from './src/produits/ListPromotions';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +30,9 @@ const AppNavigator: React.FC = () => {
         <Stack.Screen name="Aquilon" component={Aquilon} />
         <Stack.Screen name="Contact" component={Contact} />
         <Stack.Screen name="ListPoissons" component={ListPoissons} />
+        <Stack.Screen name="ListCoquillages" component={ListCoquillages} />
+        <Stack.Screen name="ListCrustaces" component={ListCrustaces} />
+        <Stack.Screen name="ListPromotions" component={ListPromotions} />
 
 
         <Stack.Screen name="Products" component={Products} />

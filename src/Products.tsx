@@ -35,14 +35,20 @@ const Products: React.FC<{ navigation: any }> = ({ navigation }) => {
           <Button
             text="Coquillages"
             image={require("../assets/images/logo/poulpe.png")}
+            screen="ListCoquillages"
+            navigation={navigation}
           ></Button>
           <Button
             text="Crustacés"
             image={require("../assets/images/logo/poulpe.png")}
+            screen="ListCrustaces"
+            navigation={navigation}
           ></Button>
           <Button
             text="Promotion"
             image={require("../assets/images/logo/poulpe.png")}
+            screen="ListPromotions"
+            navigation={navigation}
           ></Button>
         </View>
         <Footer></Footer>
