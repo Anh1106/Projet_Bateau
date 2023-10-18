@@ -4,7 +4,7 @@ import styles from "../../services/styles";
 import Button from "../../components/Button";
 
 const crustaces = [
-  { title: "Araignées", price: 7 },
+  { title: "Araignées", price: 7, purchase: false },
 ];
 
 const logo = require("../../assets/images/logo/poulpe.png");
@@ -17,14 +17,15 @@ const ListCrustaces = () => {
         source={require("../../assets/images/background.png")}
         style={styles.imagebackground}
       >
-        {crustaces.map((poisson, index) => (
+        {crustaces.map((crustace, index) => (
           <Button
+            item ={crustace}
             key={index}
             disabled={disabled}
-            text={poisson.title}
+            text={crustace.title}
             image={logo}
             style={styles.button}
-            price={poisson.price}
+            price={crustace.price}
           />
         ))}
       </ImageBackground>

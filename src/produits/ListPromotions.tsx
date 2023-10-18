@@ -4,7 +4,7 @@ import styles from "../../services/styles";
 import Button from "../../components/Button";
 
 const promotions = [
-  { title: "Moules de pêche", price: 7 },
+  { title: "Moules de pêche", price: 7 , purchase: false},
 ];
 
 const logo = require("../../assets/images/logo/poulpe.png");
@@ -17,14 +17,15 @@ const ListPromotions = () => {
         source={require("../../assets/images/background.png")}
         style={styles.imagebackground}
       >
-        {promotions.map((poisson, index) => (
+        {promotions.map((promotion, index) => (
           <Button
+            item={promotion}
             key={index}
             disabled={disabled}
-            text={poisson.title}
+            text={promotion.title}
             image={logo}
             style={styles.button}
-            price={poisson.price}
+            price={promotion.price}
           />
         ))}
       </ImageBackground>
