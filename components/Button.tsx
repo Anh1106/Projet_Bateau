@@ -1,12 +1,22 @@
 import { Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import React, { useState } from "react";
+import { purchasedProduct } from "../src/Products";
 
 export default function Button(props: any) {
   const [isSelected, setIsSelected] = useState(false);
   const toggleSelection = () => {
-      props.item.purchase = !props.item.purchase;
-      setIsSelected(!isSelected);
-      console.log(props.item)
+    props.item.purchase = !props.item.purchase;
+    setIsSelected(!isSelected);
+
+    if (props.item.purchase) {
+      purchasedProduct.push(props.item);
+    } else {
+      const index = purchasedProduct.findIndex((item) => item === props.item);
+      if (index !== -1) {
+        purchasedProduct.splice(index, 1);
+      }
+    }
+     console.log(purchasedProduct);
   };
 
   return (

@@ -14,6 +14,8 @@ import {
 } from "react-native";
 import Header from "../components/Header";
 
+export let purchasedProduct =[]; 
+
 const Products: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
     <View style={styles.container}>
