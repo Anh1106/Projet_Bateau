@@ -78,7 +78,7 @@ const data = {
                             "Moi je me balade en tongs"], 
             "description2" : ["Que du bonheur!",
                 "Que du bonheur!"]
-        },
+        }},
         "restaurants" : {
             "bistrotLandais" : {
                 "Title" : "Bistrot Landais",
@@ -157,6 +157,7 @@ const data = {
             },
             "partenaire" : "Tous les restaurants partenaires avec le bateu de Thibault"        
            },
+        
            "recipes" : {
             "homard" : {
                 "Title" : "Homard en chaud-froid",
@@ -221,7 +222,7 @@ const data = {
            }
 
     }
-}
+
 
 const DataContext = React.createContext(data);
 

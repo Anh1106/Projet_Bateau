@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
     contentTitle: {
         fontStyle: 'italic',
-        fontSize: 25,
+        fontSize: 27,
         color: 'white'
       }
 });

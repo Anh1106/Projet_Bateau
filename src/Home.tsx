@@ -41,14 +41,14 @@ const MainScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             </Button>
             <Button text="Restaurants"
             image={require('../assets/images/logo/restaurant.png')}
-            screen="Detail"
+            screen="Restaurant"
             navigation={navigation}>
             </Button>
           </View>
           <View style={styles.button}>
             <Button text="Recettes"
             image={require('../assets/images/logo/recette.png')}
-            screen="Detail"
+            screen="Recette"
             navigation={navigation}>
             </Button>
             <Button text="Contact"
