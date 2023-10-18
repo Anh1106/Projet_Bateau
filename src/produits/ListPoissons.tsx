@@ -14,6 +14,7 @@ const poissons = [
 ];
 
 const logo = require("../../assets/images/logo/poulpe.png");
+const disabled = true;
 
 const ListPoissons = () => {
   return (
@@ -25,9 +26,10 @@ const ListPoissons = () => {
         {poissons.map((poisson, index) => (
           <Button
             key={index}
+            disabled = {disabled}
             text={poisson.title}
             image={logo}
-            style={styles.button}
+            style={styles.button} 
           />
         ))}
       </ImageBackground>
