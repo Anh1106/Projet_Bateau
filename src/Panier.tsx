@@ -11,7 +11,7 @@ const Panier = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../../assets/images/background.png")}
+        source={require("../assets/images/background.png")}
         style={styles.imagebackground}
       >
         {purchasedProduct.map((product, index) => (
