@@ -14,6 +14,19 @@ import ListPoissons from './src/produits/ListPoissons';
 import ListCoquillages from './src/produits/ListCoquillages';
 import ListCrustaces from './src/produits/ListCrustaces';
 import ListPromotions from './src/produits/ListPromotions';
+import Recette from './src/Recette';
+import Homard from './src/recettes/Homard';
+import SaintJasques from './src/recettes/SaintJacques';
+import Bar from './src/recettes/Bar';
+import Tourteau from './src/recettes/Torteau';
+import Restaurant from './src/Restaurant';
+import FousDeLIle from './src/restaurants/FousDeIle';
+import Gascons from './src/restaurants/Gascons';
+import Landais from './src/restaurants/Landais';
+import Sommelier from './src/restaurants/Sommelier';
+import Villa9Trois from './src/restaurants/Villa9Trois';
+import Panier from './src/Panier';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +49,22 @@ const AppNavigator: React.FC = () => {
 
 
         <Stack.Screen name="Products" component={Products} />
+
+        <Stack.Screen name="Recette" component={Recette} />
+        <Stack.Screen name="Homard" component={Homard} />
+        <Stack.Screen name="SaintJacques" component={SaintJasques} />
+        <Stack.Screen name="Bar" component={Bar} />
+        <Stack.Screen name="Tourteau" component={Tourteau} />
+
+        <Stack.Screen name="Restaurant" component={Restaurant} />
+        <Stack.Screen name="FousDeLIle" component={FousDeLIle} />
+        <Stack.Screen name="Gascons" component={Gascons} />
+        <Stack.Screen name="Landais" component={Landais} />
+        <Stack.Screen name="Sommelier" component={Sommelier} />
+        <Stack.Screen name="Villa9Trois" component={Villa9Trois} />
+
+
+        <Stack.Screen name="Panier" component={Panier} />
       </Stack.Navigator>
     </NavigationContainer>
   );

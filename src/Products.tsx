@@ -12,7 +12,8 @@ import {
   ImageBackground,
   Image,
 } from "react-native";
-import Header from "../components/Header";
+import Header from "../components/HeaderProducts";
+import HeaderProducts from "../components/HeaderProducts";
 
 export let purchasedProduct =[]; 
 
@@ -23,7 +24,7 @@ const Products: React.FC<{ navigation: any }> = ({ navigation }) => {
         source={require("../assets/images/background.png")}
         style={styles.imagebackground}
       >
-        <Header></Header>
+        <HeaderProducts navigation={navigation}></HeaderProducts>
         <View style={styles.header2}>
           <Text> Choisissez vos produits</Text>
         </View>

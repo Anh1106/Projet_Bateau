@@ -97,7 +97,18 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     alignItems: "center",
   },
-  
+  logoL: {
+    width: 30,
+    height: 30,
+    marginLeft: 10,
+    marginTop: 20,
+  },
+  logoR: {
+    width: 30,
+    height: 30,
+    marginLeft: 10,
+    marginTop: 20,
+  },
 });
 
 export default styles;
