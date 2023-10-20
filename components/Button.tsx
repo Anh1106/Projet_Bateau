@@ -68,7 +68,7 @@ export default function Button(props: any) {
     >
       <Image style={styles.image} source={props.image}></Image>
       <Text style={styles.text}>{props.text} </Text>
-      {isSelected && <Text>OK</Text>}
+      {isSelected && <Text> OK </Text>}
       {props.price && <Text>{props.price}€</Text>}
     </TouchableOpacity>
   );
