@@ -1,65 +1,42 @@
 import { Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import React, { useState, useEffect } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { purchasedProduct } from "../src/Products";
 
 export default function Button(props: any) {
   const [isSelected, setIsSelected] = useState(false);
 
   useEffect(() => {
-    // Charger l'état de sélection (achat) depuis AsyncStorage au montage du composant
     loadSelection();
   }, []);
 
-  const loadSelection = async () => {
-    if (props.item) {
-      // Vérifiez d'abord si props.item est défini
-      try {
-        const storedSelection = await AsyncStorage.getItem(props.item.title);
-        if (storedSelection !== null) {
-          setIsSelected(storedSelection === "true");
-        }
-      } catch (error) {
-        console.error(
-          "Erreur lors du chargement de la sélection depuis AsyncStorage: ",
-          error
-        );
-      }
+  const loadSelection = () => {
+    const isProductPurchased = purchasedProduct.some((product) => product === props.item);
+
+    if (isProductPurchased) {
+      setIsSelected(true);
+    } else {
+      setIsSelected(false);
     }
   };
 
-  
-  const toggleSelection = async () => {
-    try {
-      const updatedPurchase = !props.item.purchase;
-      const updatedQuantity = updatedPurchase ? props.item.quantity + 1 : props.item.quantity - 1;
-  
-      // Stocker l'état de sélection (achat) dans AsyncStorage
-      await AsyncStorage.setItem(props.item.title, updatedPurchase.toString());
-  
-      props.item.purchase = updatedPurchase;
-      props.item.quantity = updatedQuantity;
-  
-      if (updatedPurchase) {
-        const index = purchasedProduct.findIndex((item) => item === props.item);
-        if (index === -1) {
-          purchasedProduct.push(props.item);
-        } else {
-          purchasedProduct[index] = props.item;
-        }
-      } else {
-        const index = purchasedProduct.findIndex((item) => item === props.item);
-        if (index !== -1) {
-          purchasedProduct.splice(index, 1);
-        }
+  const toggleSelection = () => {
+    const updatedPurchase = !isSelected;
+    const updatedQuantity = updatedPurchase ? props.item.quantity + 1 : props.item.quantity - 1;
+
+    if (updatedPurchase) {
+      purchasedProduct.push(props.item);
+    } else {
+      const index = purchasedProduct.findIndex((item) => item === props.item);
+      if (index !== -1) {
+        purchasedProduct.splice(index, 1);
       }
-  
-      setIsSelected(updatedPurchase);
-      console.log("Produits sélectionnés : ", purchasedProduct);
-    } catch (error) {
-      console.error("Erreur lors de la mise à jour de la sélection : ", error);
     }
-  };  
+
+    setIsSelected(updatedPurchase);
+    props.item.purchase = updatedPurchase;
+    props.item.quantity = updatedQuantity;
+    console.log("Produits sélectionnés : ", purchasedProduct);
+  };
 
   return (
     <TouchableOpacity
