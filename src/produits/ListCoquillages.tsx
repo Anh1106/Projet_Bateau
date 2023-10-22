@@ -4,14 +4,14 @@ import styles from "../../services/styles";
 import Button from "../../components/Button";
 
 const coquillages = [
-  { title: "Moules de pêche", price: 7, purchase: false },
-  { title: "Bouquets cuits", price: 8, purchase: false },
-  { title: "Huitres N°2 St Vaast", price: 9.5, purchase: false },
-  { title: "Huitres N°3 OR St Vaast", price: 12, purchase: false },
-  { title: "Huitres N°4 St Vaast", price: 19, purchase: false },
-  { title: "Huitres N°5 St Vaast", price: 24, purchase: false },
-  { title: "Huitres N°6 St Vaast", price: 38 , purchase: false},
-  { title: "Huitres N°7 St Vaast", price: 48 , purchase: false},
+  { title: "Moules de pêche", price: 7, purchase: false, quantity: 0 },
+  { title: "Bouquets cuits", price: 8, purchase: false, quantity: 0 },
+  { title: "Huitres N°2 St Vaast", price: 9.5, purchase: false, quantity: 0 },
+  { title: "Huitres N°3 OR St Vaast", price: 12, purchase: false, quantity: 0 },
+  { title: "Huitres N°4 St Vaast", price: 19, purchase: false, quantity: 0 },
+  { title: "Huitres N°5 St Vaast", price: 24, purchase: false, quantity: 0 },
+  { title: "Huitres N°6 St Vaast", price: 38, purchase: false, quantity: 0 },
+  { title: "Huitres N°7 St Vaast", price: 48, purchase: false, quantity: 0 },
 ];
 
 const logo = require("../../assets/images/logo/poulpe.png");
@@ -26,7 +26,7 @@ const ListCoquillages = () => {
       >
         {coquillages.map((coquillage, index) => (
           <Button
-            item = {coquillage}
+            item={coquillage}
             key={index}
             disabled={disabled}
             text={coquillage.title}

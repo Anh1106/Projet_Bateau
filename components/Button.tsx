@@ -28,32 +28,38 @@ export default function Button(props: any) {
     }
   };
 
+  
   const toggleSelection = async () => {
-    const updatedPurchase = !isSelected;
-
     try {
+      const updatedPurchase = !props.item.purchase;
+      const updatedQuantity = updatedPurchase ? props.item.quantity + 1 : props.item.quantity - 1;
+  
       // Stocker l'état de sélection (achat) dans AsyncStorage
       await AsyncStorage.setItem(props.item.title, updatedPurchase.toString());
-    } catch (error) {
-      console.error(
-        "Erreur lors de la mise à jour de la sélection dans AsyncStorage: ",
-        error
-      );
-    }
-
-    setIsSelected(updatedPurchase);
-
-    if (updatedPurchase) {
-      purchasedProduct.push(props.item);
-    } else {
-      const index = purchasedProduct.findIndex((item) => item === props.item);
-      if (index !== -1) {
-        purchasedProduct.splice(index, 1);
+  
+      props.item.purchase = updatedPurchase;
+      props.item.quantity = updatedQuantity;
+  
+      if (updatedPurchase) {
+        const index = purchasedProduct.findIndex((item) => item === props.item);
+        if (index === -1) {
+          purchasedProduct.push(props.item);
+        } else {
+          purchasedProduct[index] = props.item;
+        }
+      } else {
+        const index = purchasedProduct.findIndex((item) => item === props.item);
+        if (index !== -1) {
+          purchasedProduct.splice(index, 1);
+        }
       }
+  
+      setIsSelected(updatedPurchase);
+      console.log("Produits sélectionnés : ", purchasedProduct);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour de la sélection : ", error);
     }
-
-    console.log("Produits sélectionnés : ", purchasedProduct);
-  };
+  };  
 
   return (
     <TouchableOpacity

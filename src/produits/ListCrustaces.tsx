@@ -4,7 +4,7 @@ import styles from "../../services/styles";
 import Button from "../../components/Button";
 
 const crustaces = [
-  { title: "Araignées", price: 7, purchase: false },
+  { title: "Araignées", price: 7, purchase: false , quantity: 0},
 ];
 
 const logo = require("../../assets/images/logo/poulpe.png");

@@ -109,6 +109,15 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 20,
   },
+  colorWhite: {
+    color: "#6e16b7",
+  },
+  textLeft :{
+    textAlign: "right",
+  }
+  
 });
+
+
 
 export default styles;

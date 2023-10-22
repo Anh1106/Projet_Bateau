@@ -4,7 +4,7 @@ import styles from "../../services/styles";
 import Button from "../../components/Button";
 
 const promotions = [
-  { title: "Moules de pêche", price: 7 , purchase: false},
+  { title: "Moules de pêche", price: 7 , purchase: false, quantity: 0},
 ];
 
 const logo = require("../../assets/images/logo/poulpe.png");

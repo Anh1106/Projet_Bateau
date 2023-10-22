@@ -4,12 +4,12 @@ import styles from "../../services/styles";
 import Button from "../../components/Button";
 
 const poissons = [
-  { title: "Filet Bar de ligne ", price: 7, purchase: false },
-  { title: "Bar de ligne portion ", price: 10, purchase: false },
-  { title: "Aile de raie ", price: 10, purchase: false },
-  { title: "Lieu jaune de ligne ", price: 12, purchase: false },
-  { title: "Filet Julienne ", price: 19, purchase: false },
-  { title: "Bar de ligne ", price: 30, purchase: false },
+  { title: "Filet Bar de ligne ", price: 7, purchase: false , quantity: 0},
+  { title: "Bar de ligne portion ", price: 10, purchase: false, quantity: 0 },
+  { title: "Aile de raie ", price: 10, purchase: false, quantity: 0 },
+  { title: "Lieu jaune de ligne ", price: 12, purchase: false , quantity: 0},
+  { title: "Filet Julienne ", price: 19, purchase: false, quantity: 0 },
+  { title: "Bar de ligne ", price: 30, purchase: false, quantity: 0 },
 ];
 
 const logo = require("../../assets/images/logo/poulpe.png");
